@@ -1,0 +1,36 @@
+docker run `
+    -v $home\docker-mount\arkserver1:/home/server `
+    -p 7777:7777 `
+    -p 27020:27020 `
+    -p 27015:27015 `
+    -e MAP=Fjordur `
+    -e SERVERNAME="Home of ChaosP" `
+    -e MAXPLAYER=10 `
+    -e OTHERPROMPTS=cluster1 `
+    --name arksingleserver-test `
+    tcpeterx/arksingleserver:0.03
+
+    docker run `
+    -v $home\docker-mount\arkserver1:/home/server `
+    -p 7777:7777 `
+    -p 27020:27020 `
+    -p 27015:27015 `
+    -e MAP=Fjordur `
+    -e SERVERNAME="Home of ChaosP" `
+    -e MAXPLAYER=10 `
+    -e OTHERPROMPTS="-server -NoTransferFromFiltering -automanagedmods -crossplay -clusterid=cluster1" `
+    --name arksingleserver-test `
+    tcpeterx/arksingleserver:0.05
+
+
+    docker run \
+    -v /mnt/user/appdata/arkserver1:/home/server \
+    -p 7777:7777 \
+    -p 27020:27020 \
+    -p 27015:27015 \
+    -e MAP=Fjordur \
+    -e SERVERNAME="Home of ChaosP" \
+    -e MAXPLAYER=10 \
+    -e OTHERPROMPTS="-server -NoTransferFromFiltering -automanagedmods -crossplay -clusterid=cluster1" \
+    --name arksingleserver-test \
+    tcpeterx/arksingleserver:0.05
