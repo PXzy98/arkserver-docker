@@ -22,7 +22,7 @@ RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
 RUN cd /home
 
-RUN mkdir /server
+RUN mkdir /home/server
 
 # RUN steamcmd +force_install_dir /home/server +login anonymous +app_update 376030 +quit
 
@@ -30,8 +30,6 @@ COPY startup.sh /home/
 RUN chmod 755 /home/startup.sh
 
 ENV PATH="/home/servers:${PATH}"
-
-WORKDIR /home
 
 ENTRYPOINT ["/home/startup.sh"]
 
